@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MuleShield is a hackathon prototype for real-time graph intelligence that detects suspicious mule-account networks while funds are moving.">
+<title>MuleShield — Detect the network while money is moving</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/theme.css">
+<script defer src="/app.js"></script>
+</head>
+<body>
+<div id="progress"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav-wrap">
+<nav class="nav shell" aria-label="Primary navigation">
+<a class="brand" href="#top" aria-label="MuleShield home"><span class="brand-mark">M</span><span>MuleShield</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">☰</button>
+<div class="nav-links" id="desktopNav">
+<a href="#how">How it works</a><a href="#network">Network</a><a href="#payments">Payments</a><a href="#crew">Crew</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</div>
+<div class="nav-actions"><button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">☾</button><a class="btn btn-primary btn-small" href="#contact">Request pilot</a></div>
+</nav>
+<div id="mobileNav" class="mobile-nav shell" hidden>
+<a href="#how">How it works</a><a href="#network">Network</a><a href="#payments">Payments</a><a href="#crew">Crew</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</div>
+</header>
+
+<main id="main">
+<section id="top" class="hero shell">
+<div class="hero-copy">
+<div class="eyebrow"><span class="pulse"></span> REAL-TIME FRAUD GRAPH INTELLIGENCE</div>
+<h1>Don’t investigate the crime <span>after</span> the money disappears.</h1>
+<p class="hero-sub">Detect the network while the money is moving. MuleShield models accounts as nodes and transactions as time-stamped edges, then scores suspicious layering patterns in real time.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#network">Explore the network <span>↗</span></a><a class="btn btn-ghost" href="#how">See how it works</a></div>
+<div class="trust-row"><span>✓ Explainable risk</span><span>✓ Graph-first detection</span><span>✓ Graduated response</span></div>
+</div>
+<div class="hero-visual glass-card">
+<div class="terminal-head"><span><i></i><i></i><i></i></span><span>live_detection.log</span><span class="live">● LIVE</span></div>
+<div class="terminal-body">
+<div><span class="muted">[00:00:03]</span> <b>TX</b> victim_07 → acct_184 <strong>₹50,000</strong></div>
+<div><span class="muted">[00:00:07]</span> <b>GRAPH</b> fan-out detected <strong>5 nodes</strong></div>
+<div><span class="muted">[00:00:15]</span> <b>GRAPH</b> second layer <strong>15 nodes</strong></div>
+<div><span class="muted">[00:00:18]</span> <b>RISK</b> velocity anomaly <strong>0.94</strong></div>
+<div><span class="muted">[00:00:19]</span> <b>DECISION</b> review workflow queued</div>
+<div class="terminal-line"><span>muleshield@engine:~$</span> <span class="blink">▌</span></div>
+</div>
+<div class="score-mini"><div><span>Fraud confidence</span><b>94%</b></div><div class="meter"><span style="width:94%"></span></div><small>Illustrative demo telemetry</small></div>
+</div>
+</section>
+
+<section class="stats shell">
+<div><b>&lt; 1s</b><span>target decision loop</span></div><div><b>7-hop</b><span>example money trail</span></div><div><b>20+</b><span>mule nodes in demo</span></div><div><b>3-layer</b><span>rules + ML + graph</span></div>
+</section>
+
+<section id="how" class="section shell">
+<div class="section-head"><div><span class="kicker">HOW IT WORKS</span><h2>It’s not transaction scoring. <em>It’s network detection.</em></h2></div><p>Legacy batch review can inspect yesterday’s ledger. MuleShield is designed around the seconds in which stolen funds are being layered.</p></div>
+<div class="steps">
+<article class="step"><div class="num">01</div><h3>Stream</h3><p>Payment events arrive through APIs or Kafka and are normalized into a common transaction shape.</p></article>
+<article class="step"><div class="num">02</div><h3>Map</h3><p>Accounts become graph nodes. Transactions become time-stamped edges, creating a living money-flow network.</p></article>
+<article class="step"><div class="num">03</div><h3>Score</h3><p>Behavioral signals, ML probability, and graph analytics combine into an explainable risk score.</p></article>
+<article class="step"><div class="num">04</div><h3>Respond</h3><p>Configurable thresholds route events to monitoring, step-up verification, review, or authorized restriction workflows.</p></article>
+</div>
+</section>
+
+<section id="network" class="section network-section">
+<div class="shell">
+<div class="section-head"><div><span class="kicker">LIVE NETWORK VIEW</span><h2>Watch a layering pattern unfold.</h2></div><p>This is a simulated hackathon scenario, not live banking data.</p></div>
+<div class="network-card">
+<div class="network-canvas" aria-label="Illustrative fraud network diagram">
+<svg viewBox="0 0 1000 430" role="img" aria-labelledby="networkTitle networkDesc">
+<title id="networkTitle">Illustrative mule account network</title><desc id="networkDesc">A victim transaction flows into a suspected fraud account, then fans out into mule accounts before reaching an exit.</desc>
+<g class="edges">
+<path d="M90 215 C170 215 170 215 245 215"/><path d="M285 215 C380 90 420 80 510 80"/><path d="M285 215 C380 160 420 145 510 145"/><path d="M285 215 C380 215 420 210 510 210"/><path d="M285 215 C380 270 420 275 510 275"/><path d="M285 215 C380 340 420 340 510 340"/>
+<path d="M550 80 C650 50 690 55 790 105"/><path d="M550 145 C650 110 690 100 790 105"/><path d="M550 210 C650 180 690 155 790 105"/><path d="M550 275 C650 245 690 205 790 105"/><path d="M550 340 C650 310 700 250 790 105"/>
+<path d="M830 105 C890 130 900 175 905 215"/>
+</g>
+<g class="nodes">
+<circle cx="90" cy="215" r="28" class="victim"/><text x="90" y="265">Victim</text>
+<circle cx="265" cy="215" r="35" class="fraud"/><text x="265" y="275">Fraud account</text>
+<circle cx="530" cy="80" r="23"/><circle cx="530" cy="145" r="23"/><circle cx="530" cy="210" r="23"/><circle cx="530" cy="275" r="23"/><circle cx="530" cy="340" r="23"/>
+<text x="530" y="42">Mule layer</text>
+<circle cx="810" cy="105" r="30" class="layer"/><text x="810" y="160">Consolidator</text>
+<circle cx="915" cy="215" r="31" class="exit"/><text x="915" y="270">Exit</text>
+</g>
+</svg>
+<div class="network-label label-a">5-way fan-out</div><div class="network-label label-b">15+ downstream nodes</div>
+</div>
+<aside class="network-panel">
+<div class="risk-ring"><strong>94%</strong><span>risk</span></div>
+<h3>Why this network was flagged</h3>
+<ul class="check-list"><li>18 new counterparties in 42 sec</li><li>91% of received funds forwarded rapidly</li><li>Rapid fan-out across multiple layers</li><li>Connected exposure to flagged entities</li><li>Unusual velocity versus account history</li></ul>
+<button class="btn btn-secondary" id="animateNetwork">Replay detection</button>
+</aside>
+</div>
+</div>
+</section>
+
+<section id="features" class="section shell">
+<div class="section-head centered"><span class="kicker">ENGINE</span><h2>Three layers. One explainable decision.</h2><p>Built for investigators who need the “why”, not just a red number.</p></div>
+<div class="feature-grid">
+<article class="feature glass"><div class="emoji">◉</div><h3>Behavioral signals</h3><p>Velocity, pass-through timing, fan-in/fan-out, amount splitting, new beneficiaries, account age, and transaction timing.</p><span class="stripe"></span></article>
+<article class="feature glass"><div class="emoji">◇</div><h3>Machine learning</h3><p>XGBoost or scikit-learn models estimate transaction-level risk from engineered temporal and account features.</p><span class="stripe"></span></article>
+<article class="feature glass"><div class="emoji">✦</div><h3>Graph analytics</h3><p>Network depth, centrality, expansion rate, connected exposure, and risk propagation reveal coordinated movement.</p><span class="stripe"></span></article>
+</div>
+</section>
+
+<section class="section split-section shell">
+<div><span class="kicker">INVESTIGATOR WORKSPACE</span><h2>Follow the money, not a spreadsheet.</h2><p>Start from a victim, suspicious account, transaction, or alert. Trace connected hops and surface the evidence behind the score.</p><ul class="check-list large"><li>Live transaction stream</li><li>Interactive money trail</li><li>Risk score with reasons</li><li>Account and network timeline</li><li>Graduated intervention workflow</li></ul></div>
+<div class="investigator glass-card">
+<div class="case-head"><span>CASE MS-1842</span><span class="status">REVIEW</span></div>
+<div class="case-main"><div><small>Network exposure</small><strong>₹50,000</strong></div><div><small>Accounts</small><strong>23</strong></div><div><small>Hops</small><strong>7</strong></div></div>
+<div class="trail"><span>Victim</span><b>→</b><span>Fraud</span><b>→</b><span>5 mules</span><b>→</b><span>Consolidator</span><b>→</b><span>Exit</span></div>
+<div class="evidence"><span>Evidence</span><p>Rapid pass-through + expanding fan-out + abnormal counterparty growth.</p></div>
+</div>
+</section>
+
+<section class="section dark-band">
+<div class="shell">
+<div class="section-head"><div><span class="kicker">ARCHITECTURE</span><h2>Designed for a real-time event path.</h2></div><p>Hackathon architecture can start lean and add Kafka, Neo4j, and richer graph models as volume grows.</p></div>
+<div class="architecture"><span>Payment Stream</span><b>→</b><span>Event Gateway</span><b>→</b><span>Features</span><b>→</b><span>Rules + ML + Graph</span><b>→</b><span>Risk Decision</span></div>
+<div class="stack-tags"><span>React / JS</span><span>FastAPI</span><span>XGBoost</span><span>Neo4j</span><span>Kafka</span><span>PostgreSQL</span><span>Redis</span><span>D3.js</span><span>REST + WebSocket</span><span>Docker</span></div>
+</div>
+</section>
+
+<section class="section shell">
+<div class="section-head centered"><span class="kicker">DEPLOYMENT PATH</span><h2>Start with the graph. Scale the rails.</h2></div>
+<div class="bento">
+<div class="bento-large"><span class="bento-icon">01</span><h3>MVP</h3><p>FastAPI + PostgreSQL + NetworkX + XGBoost + a React-style dashboard. Synthetic transactions provide controlled ground truth.</p></div>
+<div><span class="bento-icon">02</span><h3>Scale</h3><p>Kafka for streaming, Neo4j for graph traversal, Redis for hot state.</p></div>
+<div><span class="bento-icon">03</span><h3>Advanced</h3><p>Temporal GNNs, device/IP link analysis, richer risk propagation, and institution-authorized action APIs.</p></div>
+<div><span class="bento-icon">04</span><h3>Audit layer</h3><p>Optional blockchain anchoring can preserve decision/audit records. It is not the core detector.</p></div>
+</div>
+</section>
+
+<section id="payments" class="section payment-section">
+<div class="shell">
+<div class="section-head"><div><span class="kicker">RISK-GATED PAYMENTS</span><h2>Pay only after the transaction passes the risk check.</h2></div><p>The prototype runs a pre-payment risk assessment before enabling the payment action. No real money moves on this demo.</p></div>
+<div class="payment-card">
+<div class="payment-form">
+<div class="field-row"><label>Recipient<input id="payRecipient" value="verified-store-184" autocomplete="off"></label><label>Amount (demo)<input id="payAmount" type="number" min="1" value="2500"></label></div>
+<label>Payment purpose<select id="payPurpose"><option>Online purchase</option><option>Peer-to-peer transfer</option><option>Bill payment</option></select></label>
+<button class="btn btn-primary" id="riskCheck" type="button">Run risk check</button>
+<p class="payment-note">Demo only. Do not enter card numbers, UPI PINs, OTPs, passwords, or banking credentials.</p>
+</div>
+<div class="payment-result" id="paymentResult" aria-live="polite">
+<div class="result-icon">✓</div><span class="kicker">PAYMENT GATE</span><h3>Risk check required</h3><p>We will evaluate the recipient and transaction context before the payment control becomes available.</p>
+<div class="result-metrics"><span>Network exposure <b>Pending</b></span><span>Decision <b>Pending</b></span></div>
+<button class="btn btn-secondary" id="payNow" type="button" disabled>Pay after approval</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="crew" class="section shell">
+<div class="section-head"><div><span class="kicker">THE CREW</span><h2>Meet the founder behind MuleShield.</h2></div><p>A student-built hackathon project focused on practical graph intelligence for digital-payment fraud.</p></div>
+<div class="founder-card">
+<div class="founder-photo"><img src="/krishnendu-roy.jpg" alt="Krishnendu Roy, founder of MuleShield"></div>
+<div class="founder-copy"><span class="kicker">FOUNDER</span><h3>KRISHNENDU ROY</h3><p class="role">Second Year, CSE</p><p>Krishnendu is building MuleShield as a real-time fraud-network detection concept that combines payment-stream analysis, graph intelligence, and explainable risk scoring.</p><div class="founder-tags"><span>Computer Science</span><span>Fraud Graphs</span><span>Real-time Systems</span></div><a class="btn btn-primary" href="#contact">Know the founder / Connect</a></div>
+</div>
+</section>
+
+<section class="section shell">
+<div class="section-head centered"><span class="kicker">ILLUSTRATIVE PLANS</span><h2>Choose the depth of the prototype.</h2><p>These are hackathon planning tiers, not commercial offers.</p></div>
+<div class="pricing">
+<article><span class="plan">Prototype</span><h3>Demo</h3><strong>₹0</strong><small>hackathon build</small><ul class="check-list"><li>Synthetic transaction stream</li><li>Graph visualization</li><li>Rule-based risk engine</li><li>Explainable alerts</li></ul><a href="#contact" class="btn btn-ghost">Build this path</a></article>
+<article class="featured"><span class="plan">Pilot concept</span><h3>Institution</h3><strong>Custom</strong><small>integration planning</small><ul class="check-list"><li>Kafka + Neo4j architecture</li><li>ML risk scoring</li><li>Investigator workflows</li><li>API integration design</li></ul><a href="#contact" class="btn btn-primary">Discuss pilot</a></article>
+<article><span class="plan">Scale concept</span><h3>Network</h3><strong>Custom</strong><small>enterprise architecture</small><ul class="check-list"><li>Multi-rail graph model</li><li>Advanced temporal models</li><li>Risk propagation</li><li>Audit and governance layer</li></ul><a href="#contact" class="btn btn-ghost">Explore architecture</a></article>
+</div>
+</section>
+
+<section class="section shell">
+<div class="section-head centered"><span class="kicker">ILLUSTRATIVE QUOTES</span><h2>What the concept is designed to enable.</h2><p>Fictional examples for the hackathon interface; these are not customer testimonials.</p></div>
+<div class="quote-grid"><blockquote>“The useful shift is from asking which transaction is suspicious to asking how the money is moving.”<cite>Illustrative investigator quote</cite></blockquote><blockquote>“An explanation like rapid fan-out plus pass-through timing is more actionable than a score alone.”<cite>Illustrative risk-team quote</cite></blockquote><blockquote>“The graph gives the analyst a trail to investigate instead of another isolated alert.”<cite>Illustrative operations quote</cite></blockquote></div>
+</section>
+
+<section id="faq" class="section shell">
+<div class="section-head centered"><span class="kicker">FAQ</span><h2>Digital payments, explained.</h2></div>
+<div class="faq">
+<details><summary>What is a mule account?</summary><p>A mule account is an account used to receive, move, or layer funds on behalf of a fraud operation. Legitimate accounts can also be exposed to suspicious flows, so network exposure should not automatically be treated as proof of wrongdoing.</p></details>
+<details><summary>Why use graph analytics?</summary><p>Fraudulent movement can look ordinary at the individual transaction level. A graph reveals relationships, rapid expansion, fan-in/fan-out, repeated pass-through, and multi-hop money trails.</p></details>
+<details><summary>Does a high score automatically freeze an account?</summary><p>No. The prototype uses configurable response bands. Real restrictions or holds should remain subject to the participating institution’s controls, authorization, and applicable procedures.</p></details>
+<details><summary>Where does the demo data come from?</summary><p>The hackathon prototype uses synthetic transaction scenarios so the team can demonstrate known patterns without exposing real customer financial data.</p></details>
+<details><summary>Is this connected to the 1930 helpline or government systems?</summary><p>No. This showcase does not claim direct integration with the National Cybercrime Reporting Portal, 1930 Helpline, banks, UPI, or crypto providers. Such integrations would require authorization and technical agreements.</p></details>
+</div>
+</section>
+
+<section id="contact" class="section contact-section">
+<div class="shell contact-grid">
+<div><span class="kicker">CONTACT</span><h2>Want to explore the prototype?</h2><p>Leave a note for the hackathon team. This form is a demo contact workflow, not a banking support channel.</p><div class="data-note"><strong>Form data:</strong> name, email, message, consent choice, and submission time are collected only to process this request. We do not request payment credentials, account numbers, passwords, OTPs, or financial transaction data.</div></div>
+<form id="contactForm" class="contact-form" novalidate>
+<label>Name<input name="name" autocomplete="name" required maxlength="100"></label>
+<label>Email<input name="email" type="email" autocomplete="email" required maxlength="160"></label>
+<label>Message<textarea name="message" rows="5" required maxlength="1200"></textarea></label>
+<label class="consent"><input name="consent" type="checkbox" required><span>I consent to MuleShield processing the information above to respond to this request. I have read the privacy and terms notices below.</span></label>
+<button class="btn btn-primary" type="submit">Send request</button><p id="formStatus" role="status" aria-live="polite"></p>
+</form>
+</div>
+</section>
+
+<section class="legal-section shell">
+<div class="legal-tabs"><button class="active" data-tab="privacy">Privacy</button><button data-tab="terms">Terms</button><button data-tab="refund">Refund</button><button data-tab="cookies">Cookies</button></div>
+<div class="legal-panel" id="privacy"><h3>Privacy policy</h3><p><strong>What we collect:</strong> If you use the contact form, we collect your name, email address, message, consent choice, and submission timestamp. We do not ask for banking credentials, card details, UPI PINs, OTPs, passwords, government IDs, or transaction account numbers.</p><p><strong>Why:</strong> to respond to your request and maintain a basic record of contact submissions. <strong>Third parties:</strong> this prototype does not intentionally embed analytics, advertising pixels, payment processors, social widgets, or third-party form trackers. Web fonts are loaded from Google Fonts in this demo; you can remove that dependency before production if a self-hosted font policy is required.</p><p><strong>Retention:</strong> contact submissions should be retained only as long as reasonably necessary for the stated communication purpose. Production deployment should define a formal retention schedule, deletion process, lawful basis, and data-subject request workflow before collecting personal data at scale.</p></div>
+<div class="legal-panel" id="terms" hidden><h3>Terms & conditions</h3><p>MuleShield is a hackathon prototype and educational demonstration. It is not a bank, payment service, financial adviser, fraud guarantee, law-enforcement system, or production transaction-monitoring service. Demonstration scores and network metrics are illustrative. Do not submit sensitive financial information through this site.</p></div>
+<div class="legal-panel" id="refund" hidden><h3>Refund policy</h3><p>This showcase does not currently sell subscriptions, goods, or paid services. Therefore there is no charge to refund. Any future paid pilot would require a separate commercial agreement that states pricing, cancellation, refunds, service scope, and applicable law before payment is accepted.</p></div>
+<div class="legal-panel" id="cookies" hidden><h3>Cookie notice</h3><p>This site does not require advertising or analytics cookies for its core experience. Essential platform/session mechanisms may be used by the hosting platform. If optional analytics or marketing cookies are added later, they should be disclosed and consented to where required, with a way to change the choice.</p></div>
+</section>
+</main>
+
+<footer class="footer"><div class="shell footer-inner"><div><a class="brand" href="#top"><span class="brand-mark">M</span><span>MuleShield</span></a><p>Real-time graph intelligence for fraud and mule-account networks.</p></div><div class="footer-links"><a href="#privacy" onclick="document.querySelector('[data-tab=privacy]').click()">Privacy</a><a href="#terms" onclick="document.querySelector('[data-tab=terms]').click()">Terms</a><a href="#refund" onclick="document.querySelector('[data-tab=refund]').click()">Refund</a><a href="#cookies" onclick="document.querySelector('[data-tab=cookies]').click()">Cookies</a></div></div><div class="shell copyright">Hackathon prototype · Illustrative data only</div></footer>
+
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie notice"><div><strong>Cookie notice</strong><p>We keep this showcase free of optional analytics and advertising cookies. Essential hosting/session mechanisms may still be used.</p></div><button id="cookieOk" class="btn btn-primary btn-small">Got it</button></div>
+<button id="backTop" class="back-top" aria-label="Back to top">↑</button>
+</body></html>
